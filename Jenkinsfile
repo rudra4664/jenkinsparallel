@@ -22,9 +22,6 @@ pipeline {
                     }
                 }
             }
-            steps {
-                echo 'This is test'
-            }
         }
         stage('Deploy') {
             agent any
