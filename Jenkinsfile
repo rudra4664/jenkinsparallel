@@ -1,17 +1,10 @@
 pipeline {
     agent none
-    parameters {
-        parameters {
-        string defaultValue: 'TEST', description: 'Environment to deploy the application', name: 'ENV', trim: true
-        choice choices: ['main', 'master'], description: 'environment to deploy the application', name: 'BRNACH'
-        }
-
         stages {
             stage('Build') {
             agent any
                     steps {
-                        echo 'Deploying to $ENV'
-                        echo 'code from $BRANCH branch'
+                        echo 'This is Build stage'
                     }
             }
             stage('Test Paralelly') {
