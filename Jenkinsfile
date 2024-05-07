@@ -23,10 +23,21 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
-            agent any
-            steps {
-                echo 'This is deploy'
+        stage('Deploy Parallelly') {
+            parallel {
+                stage('Deploy1') {
+                    agent any
+                    steps {
+                        echo 'This is deploy1'
+                    }
+                }
+                stage('Deploy2') {
+                    agent any
+                    steps {
+                        echo 'This is deploy2'
+                    }
+                }
+
             }
         }
     }
